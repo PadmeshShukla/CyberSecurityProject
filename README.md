@@ -5,6 +5,8 @@ Step 1: Scan all the machines which are on the network using the ip a command
 
 This will display an lo: machine and eth0: machine . Note down the IP address (mentioned in the inet section of the eth0 machine. Include the numbers after the slash (/) as well ) of the eth0 machine somewhere. For now Let's call it <IP>.
 
+Step 2: Find the ports which are open using the nmap command. Use the 'sudo nmap -n -sV -sT -O -p- <IP> -oA NmapFullScan
+
 Step 2: Use the nmap -sn -n <IP> 
 
 This will display all the hosts currently up on the network. Since our machine is a VM , we would see the mac address of the machine and next to it we would see the words 'Oracle VirtualBox virtual NIC' (I am using VirtualBox here. You might see something else if you are using something like VMWare). This is our target machine.
